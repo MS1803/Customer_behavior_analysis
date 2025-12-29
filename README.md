@@ -1,53 +1,184 @@
-## 📌 Project Overview
-The goal of this project is to simulate a corporate-grade end-to-end data analytics workflow, demonstrating the ability to translate raw data into strategic business intelligence by:
+# Customer Behavior Analysis Dashboard
 
-✅ Data Preparation,Modeling & Exploratory Data Analysis (Python): Clean and transform the raw dataset for analysis.
+## Project Overview
 
-✅ Data Analysis (SQL): Simulate business transactions, and run queries to extract insights on customer segments, loyalty, and purchase drivers.
+This project analyzes customer shopping behavior to uncover insights across **subscriptions, demographics, product categories, revenue, and sales performance**. The output is an interactive **Customer Behavior Dashboard** supported by SQL analysis and data cleaning workflows.
 
-✅ Visualization & Insights (Power BI): Build an interactive dashboard that highlights key patterns and trends, enabling stakeholders to make data-driven decisions.
+The goal is to help business stakeholders understand **who their customers are, what they buy, and which segments drive revenue**, enabling data-driven decisions in marketing, pricing, and inventory planning.
 
-✅ Report and Presentation: Write a clear project report summarizing your key findings and business recommendations. Prepare a presentation that visually communicates insights and actionable recommendations to stakeholders.
+---
 
-![Project Workflow](https://github.com/user-attachments/assets/8bbd5dc9-eb6c-40c1-8f19-c08b4107f654)
+## Data Sources
 
-## 🛠️ How to Use This Project
+* **customer_shopping_behavior.csv** – Raw transactional-level customer data
+* **Customer_Behavior_Analysis.sql** – SQL queries for aggregation and business metrics
+* **Customer Behavior Data Cleaning.ipynb** – Data cleaning, transformation, and validation
 
-1. **Clone the repository**
-   ```bash
-   https://github.com/MS1803/Customer_behavior_analysis.git-SQL-Python-PowerBI.git
-   cd customer-trends-data-analysis-SQL-Python-PowerBI
-   ```
-2. **Open Customer_Shopping_Behavior_Analysis.ipynb notebook**
+Key fields include:
 
-    This file contains:
+* Customer demographics (Age Group, Gender)
+* Product Category (Clothing, Accessories, Footwear, Outerwear)
+* Subscription Status
+* Purchase Amount
+* Review Rating
+* Shipping Type
 
-      - Data Import
+---
 
-      - Data exploration
+## Data Cleaning & Preparation
 
-      - Data cleaning
+Performed using Python (Pandas) and SQL:
 
-      - Connection to SQL Database
-  
-3. **Load the data from Python notebook into MySQL/PostgreSQL/MS SQL Server**
+* Removed duplicates and null values
+* Standardized categorical fields (Gender, Subscription Status, Category)
+* Validated numeric ranges for purchase amount and ratings
+* Created derived fields:
 
-      - Create a database in SQL
+  * Age Groups (Young Adult, Adult, Middle-aged, Senior)
+  * Aggregated revenue and sales metrics
 
-      - Run Python code to load data into SQL database
-  
-      - Open **customer_behavior_sql_queries.sql**
-  
-      - Answer Business Questions using SQL Queries 
-      
-4. **Connect the SQL Database to Power BI**
+This ensured a clean, analysis-ready dataset.
 
-      - Open **customer_behavior_dashboard.pbix**
-   
-      - Create interactive dashboard in Power BI
-  
-6. **Create Project Report and Presentation**
+---
 
-      - Create project report
-   
-      - Build presentation deck using Gamma AI
+## Key KPIs (Dashboard Summary)
+
+* **Total Customers:** 3.9K
+* **Average Purchase Amount:** $59.76
+* **Average Review Rating:** 3.75 / 5
+* **Subscription Split:**
+
+  * Subscribed: 27%
+  * Non-Subscribed: 73%
+
+---
+
+## Insights & Analysis
+
+### 1. Subscription Behavior
+
+* A majority of customers (**73%**) are **non-subscribers**
+* Indicates strong potential for **subscription conversion campaigns**
+* Even small increases in subscription adoption could significantly lift repeat revenue
+
+---
+
+### 2. Revenue by Product Category
+
+| Category    | Revenue |
+| ----------- | ------- |
+| Clothing    | ~$104K  |
+| Accessories | ~$74K   |
+| Footwear    | ~$36K   |
+| Outerwear   | ~$19K   |
+
+**Insights:**
+
+* Clothing is the **primary revenue driver**
+* Outerwear contributes the least → potential pricing, promotion, or assortment gap
+
+---
+
+### 3. Sales Volume by Category
+
+| Category    | Units Sold |
+| ----------- | ---------- |
+| Clothing    | 1,737      |
+| Accessories | 1,240      |
+| Footwear    | 599        |
+| Outerwear   | 324        |
+
+**Insights:**
+
+* Revenue and sales volume trends align closely
+* Clothing leads in both **volume and value**, making it a strategic focus area
+
+---
+
+### 4. Revenue by Age Group
+
+| Age Group   | Revenue |
+| ----------- | ------- |
+| Young Adult | ~$62K   |
+| Middle-aged | ~$59K   |
+| Adult       | ~$56K   |
+| Senior      | ~$56K   |
+
+**Insights:**
+
+* Revenue is **well distributed** across age groups
+* Young Adults contribute slightly higher revenue → effective target for upsell & loyalty programs
+
+---
+
+### 5. Sales by Age Group
+
+| Age Group   | Sales |
+| ----------- | ----- |
+| Young Adult | 1,028 |
+| Middle-aged | 986   |
+| Senior      | 944   |
+| Adult       | 942   |
+
+**Insights:**
+
+* No extreme dependency on a single age segment
+* Balanced customer base reduces revenue risk
+
+---
+
+## Business Recommendations
+
+### Subscription Growth
+
+* Target **non-subscribers (73%)** with:
+
+  * First-month discounts
+  * Free shipping for subscribers
+  * Loyalty rewards tied to repeat purchases
+
+### Product Strategy
+
+* **Double down on Clothing & Accessories** (high revenue + volume)
+* Re-evaluate **Outerwear**:
+
+  * Bundle offers
+  * Seasonal promotions
+  * Product redesign or pricing review
+
+### Customer Segmentation
+
+* Focus marketing on **Young Adults & Middle-aged customers**
+* Personalized recommendations based on category affinity
+
+---
+
+## Tools & Technologies
+
+* **Python (Pandas, NumPy)** – Data cleaning & transformation
+* **SQL** – Business logic, aggregations, KPIs
+* **Power BI** – Dashboard design & visualization
+* **GitHub** – Version control & portfolio presentation
+
+---
+
+## How to Use This Project
+
+1. Review the cleaned dataset and SQL queries
+2. Explore the dashboard for interactive insights
+3. Use findings to support:
+
+   * Marketing strategy
+   * Subscription conversion
+   * Product and inventory decisions
+
+---
+
+## Author
+
+**Mayur Sonawane**
+Aspiring Data Analyst | SQL • Power BI • Python
+
+---
+
+⭐ If you find this project useful, consider giving it a star on GitHub!
